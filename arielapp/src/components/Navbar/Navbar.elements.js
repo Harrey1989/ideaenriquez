@@ -173,5 +173,16 @@ export const MobileIcon = styled.div`
     }
   }
 `;
+export const ItemListContainer = styled.div`
+display: none;
 
+  @media screen and (max-width: 960px) {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
 
+    svg {
+      fill: #e07924;
+      margin-right: 0.5rem;
+    }
+    `;

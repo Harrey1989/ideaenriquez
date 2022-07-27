@@ -16,8 +16,10 @@ import {
   FaUserAlt,
   FaBriefcase,
   FaGlasses,
+  FaCartPlus,
 } from "react-icons/fa";
 import { IconContext } from "react-icons";
+import ItemListContainer from "../CartWidget/CartWidget";
 
 //Navbar
 const Navbar = () => {
@@ -70,9 +72,18 @@ const Navbar = () => {
                 </div>
               </MenuItemLink>
             </MenuItem>
+            <LogoContainer>
+            <FaCartPlus>
+          </FaCartPlus>
+          <ItemListContainer>
+            
+          </ItemListContainer>
+        </LogoContainer>
           </Menu>
         </IconContext.Provider>
+
       </Wrapper>
+      
     </Container>
   );
 };
