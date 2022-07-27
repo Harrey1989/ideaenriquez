@@ -19,6 +19,7 @@ import {
 } from "react-icons/fa";
 import { IconContext } from "react-icons";
 
+//Navbar
 const Navbar = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
