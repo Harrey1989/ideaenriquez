@@ -1,31 +1,32 @@
-import React, { useEffect, useState } from "react";
-
-export const ItemCount = ({ initial, stock,onAdd}) => {
-    const [count,setCount] = useState(initial);
-
-    const decrease = () => {
-        setCount (count-1)
+import { React, useState } from 'react'
+ 
+export default function App() {
+  const [counter, setCounter] = useState(1);
+ 
+  //decrease counter
+const decrease = () => {
+    if (counter > 1) {
+      setCounter(count => count - 1);
     }
+  };
 
-    const increase = () => {
-        setCount (count +1)
-    }
-
-    useEffect (()=>{
-        setCount(initial);
-    },[initial])
-
-    return (
-        <div className="counter">
-            <button disabled = {count<=1} onClick={decrease}>-</button>
-            <span>{count}</span>
-            <button disabled = {count>= stock} onClick={increase}>+</button>
-            <div>
-                <button disabled= {stock<=0} onClick={() => onAdd(count)}>Agregar al carrito</button>
-            </div>
-        </div>
-
-);
+  //increase counter
+  const increase = () => {
+    if (counter < 10) {
+    setCounter(count => count + 1);
+    }  
+};
+ 
+  
+ 
+  return (
+    <div className="counter">
+      <span className="counter__output">{counter}</span>
+      <div className="btn__container">
+        <button onClick={increase}>+</button>
+        <button onClick={decrease}>-</button>
+        <button>Agregar al carrito</button>
+      </div>
+    </div>
+  );
 }
-
-export default ItemCount;
